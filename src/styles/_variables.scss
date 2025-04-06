@@ -1,0 +1,76 @@
+// Colors
+$primary-black: #080501;
+$secondary-black: #212326;
+$primary-orange: #E4962E;
+$secondary-orange: #F0C489;
+$border-color: #383B40;
+$white: #FFFFFF;
+$text-gray: #6B7280;
+
+// Typography
+$font-family-base: 'Inter', sans-serif;
+$font-size-base: 16px;
+$font-size-sm: 14px;
+$font-size-lg: 20px;
+$font-size-xl: 24px;
+$font-size-2xl: 32px;
+$font-size-3xl: 48px;
+$font-size-4xl: 56px;
+
+$line-height-tight: 1.2;
+$line-height-base: 1.5;
+$line-height-relaxed: 1.75;
+
+// Font weights
+$font-weight-normal: 400;
+$font-weight-medium: 500;
+$font-weight-semibold: 600;
+$font-weight-bold: 700;
+
+// Spacing
+$spacing-xs: 8px;
+$spacing-sm: 16px;
+$spacing-md: 24px;
+$spacing-lg: 32px;
+$spacing-xl: 40px;
+$spacing-2xl: 64px;
+$spacing-3xl: 80px;
+$spacing-4xl: 96px;
+
+// Breakpoints
+$breakpoint-sm: 640px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 1024px;
+$breakpoint-xl: 1280px;
+$breakpoint-2xl: 1440px;
+
+// Container
+$container-padding-mobile: 16px;
+$container-padding-desktop: 40px;
+$max-width: 1440px;
+
+// Border radius
+$border-radius-sm: 4px;
+$border-radius-md: 8px;
+$border-radius-lg: 16px;
+$border-radius-xl: 30px;
+$border-radius-full: 9999px;
+
+// Z-index
+$z-index-dropdown: 1000;
+$z-index-sticky: 1020;
+$z-index-fixed: 1030;
+$z-index-modal-backdrop: 1040;
+$z-index-modal: 1050;
+$z-index-popover: 1060;
+$z-index-tooltip: 1070;
+
+// Transitions
+$transition-base: all 0.2s ease-in-out;
+$transition-fast: all 0.1s ease-in-out;
+$transition-slow: all 0.3s ease-in-out;
+
+// Shadows
+$shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+$shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+$shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);

@@ -1,0 +1,141 @@
+import { Link } from 'react-router-dom';
+import { CheckCircleIcon } from 'lucide-react';
+// Images
+import FireplaceWoodBurningImg from "@/assets/pages/HomePage/header/FireplaceWoodBurningImg";
+import ContactFireplaceHouseChairImg from "@/assets/pages/ContactsPage/ContactFireplaceHouseChairImg";
+
+// Choose Us Images
+import FireplaceFirstImg from '@/assets/pages/HomePage/ChooseUs/FireplaceFirstImg';
+import FireplaceSecondImg from '@/assets/pages/HomePage/ChooseUs/FireplaceSecondImg';
+import FireplaceThirdColumnImg from '@/assets/pages/HomePage/ChooseUs/FireplaceThirdColumnImg';
+
+// Icons
+import FireplaceIcon from '@/assets/pages/HomePage/icons/FireplaceIcon';
+import DoorIcon from '@/assets/pages/HomePage/icons/DoorIcon';
+import HouseIcon from '@/assets/pages/HomePage/icons/HouseIcon';
+
+import styles from './HomePage.module.scss';
+
+export const HomePage = () => {
+  const services = [
+    {
+      component: <FireplaceIcon />,
+      title: "Fireplace Installations",
+      description: "Gas inserts, wood stoves, fire logs, and custom surrounds.",
+    },
+    {
+      component: <DoorIcon />,
+      title: "Service Doors & Mantels",
+      description: "Custom designs to complement your space.",
+    },
+    {
+      component: <HouseIcon />,
+      title: "Outdoor Living Features",
+      description: "Fire pits, pizza ovens, and high-end grills.",
+    },
+  ];
+
+  const benefits = [
+    {
+      title: "Experienced Professionals",
+      description: "Skilled technicians ensuring flawless installations.",
+    },
+    {
+      title: "Top-Quality Materials",
+      description: "Durable, stylish, and built to last.",
+    },
+    {
+      title: "Seamless Process",
+      description: "From consultation to final setup, we handle everything.",
+    },
+  ];
+
+  return (
+    <div className={styles.home}>
+      <section className={styles.hero}>
+        <div className="container">
+          <FireplaceWoodBurningImg className={styles.heroImage} alt="Modern fireplace installation" />
+          <div className={styles.heroContent}>
+            <h1>Elevate Your Home with Expert Fireplace Installations</h1>
+            <p>
+              From cozy fireplaces to outdoor fire pits and custom grills, we
+              bring warmth and style to your space with professional
+              installation services.
+            </p>
+            <Link to="/contact" className="button button--primary">
+              Get a Free Quote
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.services}>
+        <div className="container">
+          <div className={styles.servicesCard}>
+            <h2>Our Services</h2>
+            <div className={styles.servicesGrid}>
+              {services.map((service, index) => (
+                <div key={index} className={styles.servicesItem}>
+                  <div className={styles.servicesIcon}>
+                    {service.component}
+                  </div>
+                  <h3>{service.title}</h3>
+                  <p>{service.description}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.about}>
+        <div className="container">
+          <div className={styles.aboutContent}>
+            <h2>We are a one stop shop...</h2>
+            <p>
+              With years of experience in fireplace and outdoor living
+              installations, we specialize in creating stunning and functional
+              fire features. Whether you're looking for a traditional wood
+              stove, a modern gas insert, or a stylish outdoor grill, our
+              expert team ensures top-quality craftsmanship and hassle-free
+              service.
+            </p>
+            <h3>Why Choose Us?</h3>
+            <div className={styles.benefits}>
+              {benefits.map((benefit, index) => (
+                <div key={index} className={styles.benefit}>
+                  <CheckCircleIcon className={styles.benefitIcon} />
+                  <div>
+                    <h4>{benefit.title}</h4>
+                    <p>{benefit.description}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className={styles.aboutImages}>
+            <FireplaceFirstImg className={styles.aboutImage1} alt="Modern fireplace design" />
+            <FireplaceSecondImg className={styles.aboutImage2} alt="Custom fireplace installation"/>
+            <FireplaceThirdColumnImg className={styles.aboutImage3} alt="Outdoor fire feature"/>
+          </div>
+        </div>
+      </section>
+
+      <section className={styles.cta}>
+        <ContactFireplaceHouseChairImg className={styles.ctaImage} alt="Luxury fireplace installation"/>
+        <div className={styles.ctaCard}>
+          <h2>Ready to upgrade your space?</h2>
+          <p>Call us today or request a free estimate!</p>
+          <div className={styles.ctaButtons}>
+            <Link to="/contact" className="button button--outline">
+              Contact Us
+            </Link>
+            <Link to="/services" className="button button--ghost">
+              See All Services
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  );
+}
