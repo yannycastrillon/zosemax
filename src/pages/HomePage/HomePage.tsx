@@ -1,5 +1,7 @@
 import { Link } from 'react-router-dom';
 import { CheckCircleIcon } from 'lucide-react';
+import { cn } from '@/lib/utils';
+
 // Images
 import FireplaceWoodBurningImg from "@/assets/pages/HomePage/header/FireplaceWoodBurningImg";
 import ContactFireplaceHouseChairImg from "@/assets/pages/ContactsPage/ContactFireplaceHouseChairImg";
@@ -62,13 +64,14 @@ export const HomePage = () => {
               bring warmth and style to your space with professional
               installation services.
             </p>
-            <Link to="/contact" className="button button--primary">
+            <Link to="/contact" className={cn("button button--primary", styles.heroFreeQuoteButton)}>
               Get a Free Quote
             </Link>
           </div>
         </div>
       </section>
 
+      {/* Our Services Section */}
       <section className={styles.services}>
         <div className="container">
           <div className={styles.servicesCard}>
@@ -79,8 +82,8 @@ export const HomePage = () => {
                   <div className={styles.servicesIcon}>
                     {service.component}
                   </div>
-                  <h3>{service.title}</h3>
-                  <p>{service.description}</p>
+                  <h3 className={styles.servicesTitle}>{service.title}</h3>
+                  <p className={styles.servicesDescription}>{service.description}</p>
                 </div>
               ))}
             </div>
@@ -88,11 +91,12 @@ export const HomePage = () => {
         </div>
       </section>
 
+      {/* Choose Us section */}
       <section className={styles.about}>
-        <div className="container">
+        <div className={cn("container", styles.aboutContainer)}>
           <div className={styles.aboutContent}>
             <h2>We are a one stop shop...</h2>
-            <p>
+            <p className={styles.aboutContentDescription}>
               With years of experience in fireplace and outdoor living
               installations, we specialize in creating stunning and functional
               fire features. Whether you're looking for a traditional wood
@@ -105,7 +109,7 @@ export const HomePage = () => {
               {benefits.map((benefit, index) => (
                 <div key={index} className={styles.benefit}>
                   <CheckCircleIcon className={styles.benefitIcon} />
-                  <div>
+                  <div className={styles.benefitContent}>
                     <h4>{benefit.title}</h4>
                     <p>{benefit.description}</p>
                   </div>
@@ -114,13 +118,18 @@ export const HomePage = () => {
             </div>
           </div>
           <div className={styles.aboutImages}>
-            <FireplaceFirstImg className={styles.aboutImage1} alt="Modern fireplace design" />
-            <FireplaceSecondImg className={styles.aboutImage2} alt="Custom fireplace installation"/>
-            <FireplaceThirdColumnImg className={styles.aboutImage3} alt="Outdoor fire feature"/>
+            <div className={styles.aboutImageContainerOneTwo}>
+              <FireplaceFirstImg className={styles.aboutImage1} alt="Modern fireplace design" />
+              <FireplaceSecondImg className={styles.aboutImage2} alt="Custom fireplace installation"/>
+            </div>
+            <div className={styles.aboutImageContainerThree}>
+              <FireplaceThirdColumnImg className={styles.aboutImage3} alt="Outdoor fire feature"/>
+            </div>
           </div>
         </div>
       </section>
 
+      {/* Contact Us Section */}
       <section className={styles.cta}>
         <ContactFireplaceHouseChairImg className={styles.ctaImage} alt="Luxury fireplace installation"/>
         <div className={styles.ctaCard}>

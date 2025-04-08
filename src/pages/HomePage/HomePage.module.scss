@@ -41,38 +41,34 @@
       padding-top: $spacing-2xl;
       padding-bottom: $spacing-2xl;
     }
-    
-    h1 {
-      margin-bottom: $spacing-lg;
-    }
-    
+
     p {
-      margin-bottom: $spacing-xl;
       font-size: $font-size-lg;
       opacity: 0.9;
+    }
+
+    &FreeQuoteButton {
+      margin-top: $spacing-xl;
     }
   }
 }
 
 .services {
-  padding: $spacing-4xl 0;
+  margin-top: $spacing-4xl;
   background-color: lighten($primary-black, 2%);
   
   &Card {
     background-color: $secondary-black;
     border-radius: $border-radius-xl;
-    padding: $spacing-3xl;
+    padding: $spacing-2xl $spacing-3xl;
     text-align: center;
-    
-    h2 {
-      margin-bottom: $spacing-3xl;
-    }
   }
   
   &Grid {
+    margin-top: $spacing-2xl;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: $spacing-xl;
+    gap: $spacing-md;
     
     @media (max-width: $breakpoint-lg) {
       grid-template-columns: 1fr;
@@ -84,65 +80,82 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: $spacing-md;
-    
-    h3 {
-      margin: $spacing-md 0;
+
+    .servicesIcon {
+      width: 120px;
+      height: 120px;
+      background-color: $secondary-orange;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      img {
+        width: 80px;
+        height: 80px;
+      }
     }
-    
-    p {
+
+    .servicesTitle {
+      margin-top: $spacing-sm;
+      font-size: $font-size-base;
+      color: $white;
+      font-weight: $font-weight-semibold;
+    }
+
+    .servicesDescription {
+      margin-top: $spacing-sm;
       color: rgba($white, 0.8);
-      margin: 0;
-    }
-  }
-  
-  &Icon {
-    width: 120px;
-    height: 120px;
-    background-color: $secondary-orange;
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-bottom: $spacing-sm;
-    
-    img {
-      width: 60px;
-      height: 60px;
+      line-height: 19px;
+      align-items: center;
     }
   }
 }
 
 .about {
-  padding: $spacing-4xl 0;
+  margin-top: $spacing-104;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+  &Container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: $spacing-xl;
+    justify-items: end;
+    align-items: center;
+
+    @media (max-width: $breakpoint-lg) {
+      grid-template-columns: 1fr;
+    }
+  }
   
   .container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: $spacing-3xl;
-    
+    justify-items: end;
+
     @media (max-width: $breakpoint-lg) {
       grid-template-columns: 1fr;
     }
   }
   
   &Content {
-    h2 {
-      margin-bottom: $spacing-xl;
+    &Description {
+      margin-top: $spacing-xl;
     }
-    
+
     h3 {
-      margin: $spacing-xl 0 $spacing-lg;
+      margin: $spacing-lg 0;
     }
   }
   
   &Images {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
     gap: $spacing-md;
-    aspect-ratio: 4/3;
-    
+
     img {
       width: 100%;
       height: 100%;
@@ -154,17 +167,26 @@
       }
     }
   }
+
+  &ImageContainerOneTwo {
+    display: grid;
+    justify-content: end;
+
+    .aboutImage1 {
+      margin-bottom: $spacing-md;
+    }
+  }
 }
 
 .benefits {
   display: flex;
   flex-direction: column;
-  gap: $spacing-lg;
+  gap: $spacing-sm;
 }
 
 .benefit {
   display: flex;
-  gap: $spacing-md;
+  gap: $spacing-sm;
   align-items: flex-start;
   
   &Icon {
@@ -173,24 +195,27 @@
     color: $primary-orange;
     flex-shrink: 0;
   }
+
+  &Content {
+    h4 {
+      font-size: $font-size-base;
+      font-weight: $font-weight-bold;
+    }
   
-  h4 {
-    font-size: $font-size-lg;
-    margin-bottom: $spacing-xs;
-  }
-  
-  p {
-    margin: 0;
-    color: rgba($white, 0.8);
+    p {
+      margin: 0;
+    }
+
   }
 }
 
 .cta {
+  margin-top: $spacing-104;
   position: relative;
-  height: 600px;
+  height: 480px;
   background-color: darken($primary-black, 5%);
   overflow: hidden;
-  
+
   @media (max-width: $breakpoint-lg) {
     height: auto;
     padding: $spacing-2xl 0;
