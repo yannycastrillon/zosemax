@@ -2,9 +2,8 @@
 
 .footer {
   width: 100%;
-  height: 80px;
+  height: $spacing-3xl;
   background-color: $primary-black;
-  border-top: 2px solid $border-color;
 }
 
 .container {
@@ -15,6 +14,7 @@
   padding: $spacing-lg $spacing-xl;
   max-width: $max-width;
   margin: 0 auto;
+  border-top: 2px solid $border-color;
 }
 
 .copyright {
