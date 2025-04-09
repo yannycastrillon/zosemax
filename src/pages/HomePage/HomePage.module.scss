@@ -34,7 +34,7 @@
   &Content {
     position: relative;
     max-width: 600px;
-    padding-top: $spacing-4xl;
+    padding-top: $spacing-177;
     
     @media (max-width: $breakpoint-lg) {
       max-width: 100%;
@@ -42,19 +42,30 @@
       padding-bottom: $spacing-2xl;
     }
 
-    p {
-      font-size: $font-size-lg;
-      opacity: 0.9;
+    .title {
+      /* H1 Heading */
+      width: 680px;
+      height: 96px;
+
+      font-family: $font-family-base;
+      font-style: normal;
+      font-weight: 600;
+      font-size: $font-size-3xl;
+      line-height: 48px;
     }
 
-    &FreeQuoteButton {
-      margin-top: $spacing-xl;
+    .subTitle {
+      font-size: $font-size-base;
+      opacity: 0.9;
+      margin: $spacing-sm 0;
+      line-height: 22px;
+      letter-spacing: -2%;
     }
   }
 }
 
 .services {
-  margin-top: $spacing-4xl;
+  margin-top: $spacing-xl;
   background-color: lighten($primary-black, 2%);
   
   &Card {
@@ -97,9 +108,9 @@
     }
 
     .servicesTitle {
+      color: $white;
       margin-top: $spacing-sm;
       font-size: $font-size-base;
-      color: $white;
       font-weight: $font-weight-semibold;
     }
 
@@ -142,10 +153,13 @@
   
   &Content {
     &Description {
+      line-height: 22px;
       margin-top: $spacing-xl;
     }
 
     h3 {
+      font-weight: $font-weight-bold;
+      font-size: $font-size-base;
       margin: $spacing-lg 0;
     }
   }
@@ -198,11 +212,14 @@
 
   &Content {
     h4 {
+      line-height: 22px;
       font-size: $font-size-base;
       font-weight: $font-weight-bold;
     }
-  
+
     p {
+      line-height: 22px;
+      font-size: $font-size-base;
       margin: 0;
     }
 

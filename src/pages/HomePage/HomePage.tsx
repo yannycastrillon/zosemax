@@ -61,8 +61,8 @@ export const HomePage = () => {
         <div className="container">
           <FireplaceWoodBurningImg className={styles.heroImage} alt="Modern fireplace installation" />
           <div className={styles.heroContent}>
-            <h1>Elevate Your Home with Expert Fireplace Installations</h1>
-            <p>
+            <h1 className={styles.title}>Elevate Your Home with Expert Fireplace Installations</h1>
+            <p className={styles.subTitle}>
               From cozy fireplaces to outdoor fire pits and custom grills, we
               bring warmth and style to your space with professional
               installation services.
@@ -102,7 +102,7 @@ export const HomePage = () => {
             <p className={styles.aboutContentDescription}>
               With years of experience in fireplace and outdoor living
               installations, we specialize in creating stunning and functional
-              fire features. Whether you"re looking for a traditional wood
+              fire features. Whether you're looking for a traditional wood
               stove, a modern gas insert, or a stylish outdoor grill, our
               expert team ensures top-quality craftsmanship and hassle-free
               service.

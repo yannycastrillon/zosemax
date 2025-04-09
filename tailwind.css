@@ -1,3 +1,4 @@
+@tailwind base;
 @tailwind components;
 @tailwind utilities;
 
@@ -16,10 +17,6 @@
   --body-heavy-line-height: 22px;
   --white: rgba(255, 255, 255, 1);
 }
-
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
 
 @layer base {
   :root {
