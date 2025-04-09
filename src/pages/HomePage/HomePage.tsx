@@ -1,22 +1,25 @@
-import { Link } from 'react-router-dom';
-import { CheckCircleIcon } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { Link } from "react-router-dom";
+import { CheckCircleIcon } from "lucide-react";
+import { cn } from "@/lib/utils";
 
 // Images
 import FireplaceWoodBurningImg from "@/assets/pages/HomePage/header/FireplaceWoodBurningImg";
 import ContactFireplaceHouseChairImg from "@/assets/pages/ContactsPage/ContactFireplaceHouseChairImg";
 
 // Choose Us Images
-import FireplaceFirstImg from '@/assets/pages/HomePage/ChooseUs/FireplaceFirstImg';
-import FireplaceSecondImg from '@/assets/pages/HomePage/ChooseUs/FireplaceSecondImg';
-import FireplaceThirdColumnImg from '@/assets/pages/HomePage/ChooseUs/FireplaceThirdColumnImg';
+import FireplaceFirstImg from "@/assets/pages/HomePage/ChooseUs/FireplaceFirstImg";
+import FireplaceSecondImg from "@/assets/pages/HomePage/ChooseUs/FireplaceSecondImg";
+import FireplaceThirdColumnImg from "@/assets/pages/HomePage/ChooseUs/FireplaceThirdColumnImg";
 
 // Icons
-import FireplaceIcon from '@/assets/pages/HomePage/icons/FireplaceIcon';
-import DoorIcon from '@/assets/pages/HomePage/icons/DoorIcon';
-import HouseIcon from '@/assets/pages/HomePage/icons/HouseIcon';
+import FireplaceIcon from "@/assets/pages/HomePage/icons/FireplaceIcon";
+import DoorIcon from "@/assets/pages/HomePage/icons/DoorIcon";
+import HouseIcon from "@/assets/pages/HomePage/icons/HouseIcon";
 
-import styles from './HomePage.module.scss';
+// Components
+import { Button } from "@/components/ui/Button/Button";
+
+import styles from "./HomePage.module.scss";
 
 export const HomePage = () => {
   const services = [
@@ -64,9 +67,9 @@ export const HomePage = () => {
               bring warmth and style to your space with professional
               installation services.
             </p>
-            <Link to="/contact" className={cn("button button--primary", styles.heroFreeQuoteButton)}>
-              Get a Free Quote
-            </Link>
+            <Button asChild variant="getQuoteButton">
+              <Link to="/contact">Get a Free Quote</Link>
+            </Button>
           </div>
         </div>
       </section>
@@ -99,7 +102,7 @@ export const HomePage = () => {
             <p className={styles.aboutContentDescription}>
               With years of experience in fireplace and outdoor living
               installations, we specialize in creating stunning and functional
-              fire features. Whether you're looking for a traditional wood
+              fire features. Whether you"re looking for a traditional wood
               stove, a modern gas insert, or a stylish outdoor grill, our
               expert team ensures top-quality craftsmanship and hassle-free
               service.
@@ -131,17 +134,19 @@ export const HomePage = () => {
 
       {/* Contact Us Section */}
       <section className={styles.cta}>
-        <ContactFireplaceHouseChairImg className={styles.ctaImage} alt="Luxury fireplace installation"/>
-        <div className={styles.ctaCard}>
-          <h2>Ready to upgrade your space?</h2>
-          <p>Call us today or request a free estimate!</p>
-          <div className={styles.ctaButtons}>
-            <Link to="/contact" className="button button--outline">
-              Contact Us
-            </Link>
-            <Link to="/services" className="button button--ghost">
-              See All Services
-            </Link>
+        <div className={cn("container", styles.ctaContactsContainer)}>
+          <ContactFireplaceHouseChairImg className={styles.ctaImage} alt="Luxury fireplace installation"/>
+          <div className={styles.ctaCard}>
+            <h2>Ready to upgrade your space?</h2>
+            <p>Call us today or request a free estimate!</p>
+            <div className={styles.ctaButtons}>
+              <Button asChild variant="contactButton">
+                <Link to="/contact">Contact Us</Link>
+              </Button>
+              <Button asChild variant="link" className={styles.customContactAllServicesLink}>
+                <Link to="/services">See All Services</Link>
+              </Button>
+            </div>
           </div>
         </div>
       </section>

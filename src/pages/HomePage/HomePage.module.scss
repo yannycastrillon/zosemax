@@ -211,66 +211,100 @@
 
 .cta {
   margin-top: $spacing-104;
-  position: relative;
-  height: 480px;
-  background-color: darken($primary-black, 5%);
   overflow: hidden;
 
-  @media (max-width: $breakpoint-lg) {
-    height: auto;
-    padding: $spacing-2xl 0;
+  .container {
+    display: grid;
+    gap: $spacing-3xl;
+    align-items: center;
+
+    @media (max-width: $breakpoint-lg) {
+      grid-template-columns: 1fr;
+    }
   }
-  
+
+  &ContactsContainer {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    position: relative;
+    background-color: $thirdary-black;
+    min-height: 480px;
+
+    @media (max-width: $breakpoint-lg) {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+  }
+
   &Image {
-    position: absolute;
-    width: 50%;
+    width: 100%;
     height: 100%;
     object-fit: cover;
-    left: 0;
-    
+    border-radius: $border-radius-xl;
+    grid-column: 1;
+
     @media (max-width: $breakpoint-lg) {
-      position: relative;
-      width: 100%;
       height: 300px;
-      margin-bottom: $spacing-xl;
     }
   }
   
   &Card {
     position: absolute;
-    right: $container-padding-desktop;
+    right: 0;
     top: 50%;
     transform: translateY(-50%);
-    width: 45%;
+    width: fit-content;
     background-color: $primary-orange;
     border-radius: $border-radius-xl;
-    padding: $spacing-3xl;
+    padding: $spacing-2xl;
     color: $primary-black;
+    margin-right: $spacing-xl;
+    z-index: 1;
     
     @media (max-width: $breakpoint-lg) {
       position: relative;
       width: 100%;
-      right: 0;
       top: 0;
       transform: none;
+      margin-top: $spacing-xl;
     }
-    
+
     h2 {
-      margin-bottom: $spacing-md;
+      font-size: $font-size-2xl;
     }
-    
+
     p {
-      color: rgba($primary-black, 0.9);
-      margin-bottom: $spacing-xl;
+      margin: $spacing-sm 0;
+      color: $primary-black;
+      font-size: $font-size-base;
+      line-height: 22px;
     }
   }
-  
+
   &Buttons {
     display: flex;
-    gap: $spacing-md;
-    
+    gap: $spacing-sm;
+
     @media (max-width: $breakpoint-sm) {
       flex-direction: column;
     }
+
+    .customContactAllServicesLink {
+      display: grid;
+      justify-content: center;
+      align-items: center;
+      padding: 12px 16px;
+      gap: 10px;
+    
+      width: fit-content;
+      height: fit-content;
+    
+      border-radius: 25px;
+    
+      /* Inside auto layout */
+      flex: none;
+      order: 1;
+    }
   }
 }
+

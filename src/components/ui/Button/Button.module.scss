@@ -1,0 +1,58 @@
+@import '@/styles/variables'; // Assuming variables are needed
+
+.contactButton {
+  /* Button */
+  display: grid;
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 16px;
+
+  width: fit-content;
+  height: fit-content;
+
+  border: 1px solid $primary-black;
+  border-radius: 25px;
+
+  text-decoration: none !important;
+  color: $primary-black !important;
+  font-weight: $font-weight-semibold !important;
+
+  &:hover {
+    background-color: darken($primary-orange, 5%);
+  }
+
+  &:active {
+    background-color: transparent;
+    color: $primary-black !important;
+    border-color: $primary-black !important;
+  }
+}
+
+.getQuoteButton {
+  /* Button */
+  /* Auto layout */
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  padding: 12px 16px;
+
+  width: fit-content;
+  height: fit-content;
+
+  background: #E5972F;
+  border-radius: 25px;
+  text-decoration: none !important;
+  color: $primary-black !important;
+  font-weight: $font-weight-semibold !important;
+
+  &:hover {
+    background-color: darken($primary-orange, 5%);
+  }
+
+  &:active {
+    background-color: transparent;
+    color: $primary-black !important;
+    border-color: $primary-black !important;
+  }
+}
