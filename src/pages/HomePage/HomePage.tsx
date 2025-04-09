@@ -58,7 +58,7 @@ export const HomePage = () => {
   return (
     <div className={styles.home}>
       <section className={styles.hero}>
-        <div className="container">
+        <div className={cn("container", styles.heroContainer)}>
           <FireplaceWoodBurningImg className={styles.heroImage} alt="Modern fireplace installation" />
           <div className={styles.heroContent}>
             <h1 className={styles.title}>Elevate Your Home with Expert Fireplace Installations</h1>
@@ -98,7 +98,7 @@ export const HomePage = () => {
       <section className={styles.about}>
         <div className={cn("container", styles.aboutContainer)}>
           <div className={styles.aboutContent}>
-            <h2>We are a one stop shop...</h2>
+            <h2>Your One-Stop Shop for Fireplace Solutions Designed for Modern Living</h2>
             <p className={styles.aboutContentDescription}>
               With years of experience in fireplace and outdoor living
               installations, we specialize in creating stunning and functional

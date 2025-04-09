@@ -6,7 +6,6 @@
 
 .hero {
   position: relative;
-  height: 700px;
   background-color: $primary-black;
   overflow: hidden;
   
@@ -14,15 +13,21 @@
     height: auto;
     min-height: 600px;
   }
+
+  &Container {
+    position: relative;
+    min-height: 573px;
+
+    @media (max-width: $breakpoint-lg) {
+      grid-template-columns: 1fr;
+      min-height: auto;
+    }
+  }
   
   &Image {
     position: absolute;
-    width: 60%;
-    height: 100%;
-    top: 0;
-    right: 0;
-    object-fit: cover;
-    
+    right: 34px;
+
     @media (max-width: $breakpoint-lg) {
       width: 100%;
       height: 50%;
