@@ -8,6 +8,7 @@
   top: 0;
   left: 0;
   z-index: $z-index-fixed;
+  border-bottom: 1px solid $border-color;
 }
 
 .nav {
@@ -18,10 +19,16 @@
   padding: 0 $spacing-xl;
   max-width: $max-width;
   margin: 0 auto;
+
+  @media (max-width: $breakpoint-md) {
+    padding: 0 $spacing-md;
+  }
 }
 
+// ─── Logo ─────────────────────────────────────────────────────────────────────
 .logo {
   text-decoration: none;
+  flex-shrink: 0;
 }
 
 .logoContainer {
@@ -33,6 +40,11 @@
 .logoIcon {
   width: 40px;
   height: 40px;
+
+  @media (max-width: $breakpoint-md) {
+    width: 32px;
+    height: 32px;
+  }
 }
 
 .logoText {
@@ -41,16 +53,25 @@
   color: $white;
   font-size: 24px;
   letter-spacing: 0.8px;
+
+  @media (max-width: $breakpoint-md) {
+    font-size: 20px;
+  }
 }
 
-.links {
+// ─── Desktop links ─────────────────────────────────────────────────────────────
+.desktopLinks {
   display: flex;
   gap: $spacing-xl;
+
+  @media (max-width: $breakpoint-md) {
+    display: none;
+  }
 }
 
 .link {
-  color: $white;
-  font-size: $font-size-xl;
+  color: rgba($white, 0.8);
+  font-size: $font-size-lg;
   font-weight: $font-weight-medium;
   letter-spacing: -0.48px;
   text-decoration: none;
@@ -61,25 +82,184 @@
   }
 }
 
-@media (max-width: $breakpoint-md) {
-  .nav {
-    padding: 0 $spacing-md;
+.linkActive {
+  color: $primary-orange;
+}
+
+// ─── Right cluster: phone + CTA + hamburger ───────────────────────────────────
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: $spacing-md;
+}
+
+.phoneLink {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: rgba($white, 0.85);
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  transition: $transition-base;
+  white-space: nowrap;
+
+  &:hover {
+    color: $primary-orange;
   }
 
-  .links {
-    gap: $spacing-md;
+  @media (max-width: $breakpoint-md) {
+    display: none;
+  }
+}
+
+.quoteBtn {
+  display: inline-flex;
+  align-items: center;
+  background-color: $primary-orange;
+  color: $primary-black;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  text-decoration: none;
+  padding: 8px 20px;
+  border-radius: $border-radius-full;
+  transition: $transition-base;
+  white-space: nowrap;
+
+  &:hover {
+    filter: brightness(1.08);
   }
 
-  .link {
-    font-size: $font-size-lg;
+  @media (max-width: $breakpoint-md) {
+    display: none;
+  }
+}
+
+// ─── Hamburger button ─────────────────────────────────────────────────────────
+.menuButton {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  color: $white;
+  cursor: pointer;
+  padding: 4px;
+  border-radius: $border-radius-sm;
+  transition: $transition-base;
+
+  &:hover {
+    color: $primary-orange;
   }
 
-  .logoText {
-    font-size: 20px;
+  @media (max-width: $breakpoint-md) {
+    display: flex;
   }
+}
 
-  .logoIcon {
-    width: 32px;
-    height: 32px;
+// ─── Backdrop ────────────────────────────────────────────────────────────────
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: $z-index-modal-backdrop;
+  animation: fadeIn 0.2s ease;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+// ─── Mobile slide-over ────────────────────────────────────────────────────────
+.mobileMenu {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100vh;
+  width: 280px;
+  background-color: $secondary-black;
+  border-left: 1px solid $border-color;
+  z-index: $z-index-modal;
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  padding: $spacing-3xl $spacing-md $spacing-md;
+}
+
+.mobileMenuOpen {
+  transform: translateX(0);
+}
+
+// Phone block at top of mobile menu
+.mobilePhone {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  color: $primary-orange;
+  font-size: $font-size-base;
+  font-weight: $font-weight-semibold;
+  text-decoration: none;
+  padding: $spacing-sm $spacing-md;
+  border-radius: $border-radius-md;
+  background-color: rgba($primary-orange, 0.12);
+  margin-bottom: $spacing-sm;
+  transition: $transition-base;
+
+  &:hover {
+    background-color: rgba($primary-orange, 0.2);
+  }
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin-top: $spacing-xs;
+}
+
+.mobileLink {
+  display: block;
+  padding: $spacing-sm $spacing-md;
+  color: rgba($white, 0.85);
+  font-size: $font-size-lg;
+  font-weight: $font-weight-medium;
+  text-decoration: none;
+  border-radius: $border-radius-md;
+  transition: $transition-base;
+
+  &:hover {
+    background-color: rgba($white, 0.07);
+    color: $white;
+  }
+}
+
+.mobileLinkActive {
+  color: $primary-orange;
+  background-color: rgba($primary-orange, 0.1);
+
+  &:hover {
+    background-color: rgba($primary-orange, 0.15);
+    color: $primary-orange;
+  }
+}
+
+// CTA button pinned to bottom of mobile menu
+.mobileQuoteBtn {
+  display: block;
+  text-align: center;
+  margin-top: auto;
+  padding: 14px $spacing-md;
+  background-color: $primary-orange;
+  color: $primary-black;
+  font-size: $font-size-base;
+  font-weight: $font-weight-bold;
+  text-decoration: none;
+  border-radius: $border-radius-full;
+  transition: $transition-base;
+
+  &:hover {
+    filter: brightness(1.08);
   }
 }

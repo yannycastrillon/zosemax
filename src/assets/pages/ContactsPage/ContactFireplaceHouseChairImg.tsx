@@ -7,7 +7,7 @@ interface ContactFireplaceHouseChairImgProps {
 
 const ContactFireplaceHouseChairImg: FC<ContactFireplaceHouseChairImgProps> = ({ className, alt }) => {
   return (
-    <svg width="720" height="480" viewBox="0 0 720 480" fill="none" xmlns="http://www.w3.org/2000/svg" xlinkHref="http://www.w3.org/1999/xlink" className={className}>
+    <svg width="720" height="480" viewBox="0 0 720 480" fill="none" xmlns="http://www.w3.org/2000/svg" xlinkHref="http://www.w3.org/1999/xlink" preserveAspectRatio="xMidYMid slice" role="img" aria-label={alt} className={className}>
       <rect width="720" height="480" fill="url(#pattern0_12_374)"/>
       <defs>
         <pattern id="pattern0_12_374" patternContentUnits="objectBoundingBox" width="1" height="1">

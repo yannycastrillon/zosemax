@@ -1,0 +1,86 @@
+@import '@/styles/variables';
+
+.bar {
+  background-color: $secondary-black;
+  border-bottom: 1px solid $border-color;
+  width: 100%;
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0;
+  max-width: $max-width;
+  margin: 0 auto;
+  padding: 0 $spacing-xl;
+
+  @media (max-width: $breakpoint-md) {
+    padding: 0 $spacing-md;
+    flex-wrap: wrap;
+  }
+}
+
+.item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 14px $spacing-lg;
+  flex: 1;
+  justify-content: center;
+  border-right: 1px solid $border-color;
+
+  &:last-child {
+    border-right: none;
+  }
+
+  @media (max-width: $breakpoint-lg) {
+    padding: 12px $spacing-md;
+    gap: 6px;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    flex: 0 0 50%;
+    border-right: none;
+    border-bottom: 1px solid $border-color;
+    padding: 12px $spacing-sm;
+    justify-content: flex-start;
+
+    &:nth-child(odd) {
+      border-right: 1px solid $border-color;
+    }
+
+    &:nth-last-child(-n+2) {
+      border-bottom: none;
+    }
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    flex: 0 0 100%;
+    border-right: none !important;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.icon {
+  color: $primary-orange;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.value {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-bold;
+  color: $white;
+  white-space: nowrap;
+}
+
+.label {
+  font-size: $font-size-xs;
+  color: rgba($white, 0.5);
+  white-space: nowrap;
+}

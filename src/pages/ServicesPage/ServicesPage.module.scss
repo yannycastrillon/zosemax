@@ -1,0 +1,105 @@
+@import '@/styles/variables';
+
+.page {
+  background-color: $primary-black;
+  min-height: 100vh;
+}
+
+// ─── Hero ────────────────────────────────────────────────────────────────────
+.hero {
+  background-color: $primary-black;
+  padding: $spacing-4xl 0 $spacing-3xl;
+  border-bottom: 1px solid $border-color;
+
+  @media (max-width: $breakpoint-md) {
+    padding: $spacing-2xl 0 $spacing-xl;
+  }
+}
+
+.heroContent {
+  max-width: 680px;
+}
+
+.heroEyebrow {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $primary-orange;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: $spacing-sm;
+}
+
+.heroTitle {
+  font-size: $font-size-4xl;
+  font-weight: $font-weight-bold;
+  color: $white;
+  line-height: 1.1;
+  margin-bottom: $spacing-sm;
+
+  @media (max-width: $breakpoint-lg) {
+    font-size: $font-size-3xl;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    font-size: $font-size-2xl;
+  }
+}
+
+.heroSubtitle {
+  font-size: $font-size-base;
+  color: rgba($white, 0.7);
+  line-height: 1.7;
+  margin: 0;
+}
+
+// ─── Content ─────────────────────────────────────────────────────────────────
+.content {
+  padding: $spacing-3xl 0;
+
+  @media (max-width: $breakpoint-md) {
+    padding: $spacing-2xl 0;
+  }
+}
+
+.contentInner {
+  display: flex;
+  flex-direction: column;
+}
+
+// ─── CTA ─────────────────────────────────────────────────────────────────────
+.cta {
+  padding: $spacing-3xl 0 $spacing-4xl;
+  background-color: $thirdary-black;
+  border-top: 1px solid $border-color;
+}
+
+.ctaCard {
+  max-width: 640px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.ctaTitle {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $white;
+  margin-bottom: $spacing-sm;
+
+  @media (max-width: $breakpoint-md) {
+    font-size: $font-size-xl;
+  }
+}
+
+.ctaText {
+  font-size: $font-size-base;
+  color: rgba($white, 0.7);
+  line-height: 1.7;
+  margin-bottom: $spacing-lg;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: $spacing-sm;
+  justify-content: center;
+  flex-wrap: wrap;
+}

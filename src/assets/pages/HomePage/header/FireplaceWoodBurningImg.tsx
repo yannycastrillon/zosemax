@@ -7,7 +7,7 @@ interface FireplaceWoodBurningImgProps {
 
 const FireplaceWoodBurningImg: FC<FireplaceWoodBurningImgProps> = ({ className, alt }) => {
   return (
-    <svg width="764" height="573" viewBox="0 0 764 573" fill="none" xmlns="http://www.w3.org/2000/svg" xlinkHref="http://www.w3.org/1999/xlink" className={className}>
+    <svg role="img" aria-label={alt} width="764" height="573" viewBox="0 0 764 573" fill="none" xmlns="http://www.w3.org/2000/svg" xlinkHref="http://www.w3.org/1999/xlink" className={className}>
       <rect width="764" height="573" fill="url(#pattern0_4_10)"/>
       <rect width="764" height="573" fill="url(#paint0_linear_4_10)"/>
       <defs>

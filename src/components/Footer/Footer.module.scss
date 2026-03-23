@@ -1,36 +1,121 @@
 @import '@/styles/variables';
 
 .footer {
-  width: 100%;
-  height: $spacing-3xl;
-  background-color: $primary-black;
+  background-color: $thirdary-black;
+  border-top: 1px solid $border-color;
+}
+
+// ─── Top section ──────────────────────────────────────────────────────────────
+.top {
+  padding: $spacing-3xl 0 $spacing-2xl;
 }
 
 .container {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100%;
-  padding: $spacing-lg $spacing-xl;
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1.5fr;
+  gap: $spacing-2xl;
   max-width: $max-width;
   margin: 0 auto;
-  border-top: 2px solid $border-color;
+  padding: 0 $spacing-xl;
+
+  @media (max-width: $breakpoint-lg) {
+    grid-template-columns: 1fr 1fr;
+    gap: $spacing-xl;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+    padding: 0 $spacing-md;
+    gap: $spacing-lg;
+  }
 }
 
-.copyright {
+// ─── Brand column ─────────────────────────────────────────────────────────────
+.brand {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.logoLink {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-sm;
+  text-decoration: none;
+}
+
+.logoIcon {
+  width: 36px;
+  height: 36px;
+}
+
+.logoText {
+  font-family: 'Arial-Black', Helvetica;
+  font-weight: 900;
   color: $white;
+  font-size: 20px;
+  letter-spacing: 0.8px;
+}
+
+.tagline {
   font-size: $font-size-sm;
+  color: rgba($white, 0.5);
+  line-height: 1.6;
+  max-width: 240px;
   margin: 0;
 }
 
-.links {
+.socials {
   display: flex;
-  gap: $spacing-xl;
+  gap: $spacing-sm;
+  margin-top: 4px;
 }
 
-.link {
-  color: $white;
+.socialLink {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: $border-radius-md;
+  background-color: rgba($white, 0.07);
+  color: rgba($white, 0.6);
+  transition: $transition-base;
+  text-decoration: none;
+
+  &:hover {
+    background-color: rgba($primary-orange, 0.15);
+    color: $primary-orange;
+  }
+}
+
+// ─── Column headings ──────────────────────────────────────────────────────────
+.col {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.colHeading {
   font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $white;
+  letter-spacing: 0.5px;
+  margin: 0 0 4px;
+}
+
+.colList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.colLink {
+  font-size: $font-size-sm;
+  color: rgba($white, 0.55);
   text-decoration: none;
   transition: $transition-base;
 
@@ -39,15 +124,87 @@
   }
 }
 
-@media (max-width: $breakpoint-md) {
-  .container {
-    padding: $spacing-md;
-    flex-direction: column;
-    gap: $spacing-sm;
-    text-align: center;
+.areaItem {
+  font-size: $font-size-sm;
+  color: rgba($white, 0.55);
+  line-height: 1.5;
+}
+
+// ─── Contact list ─────────────────────────────────────────────────────────────
+.contactList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.contactItem {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: $font-size-sm;
+  color: rgba($white, 0.55);
+  text-decoration: none;
+  transition: $transition-base;
+  line-height: 1.4;
+
+  svg {
+    flex-shrink: 0;
+    margin-top: 1px;
+    color: $primary-orange;
   }
 
-  .links {
-    gap: $spacing-md;
+  &[href]:hover {
+    color: $primary-orange;
+  }
+}
+
+.contactIcon {
+  flex-shrink: 0;
+  margin-top: 1px;
+  color: $primary-orange;
+}
+
+// ─── Bottom bar ───────────────────────────────────────────────────────────────
+.bottom {
+  border-top: 1px solid $border-color;
+  padding: $spacing-md 0;
+
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 $spacing-xl;
+
+    @media (max-width: $breakpoint-md) {
+      flex-direction: column;
+      gap: $spacing-sm;
+      text-align: center;
+      padding: 0 $spacing-md;
+    }
+  }
+}
+
+.copyright {
+  font-size: $font-size-xs;
+  color: rgba($white, 0.35);
+  margin: 0;
+}
+
+.legalLinks {
+  display: flex;
+  gap: $spacing-lg;
+}
+
+.legalLink {
+  font-size: $font-size-xs;
+  color: rgba($white, 0.35);
+  text-decoration: none;
+  transition: $transition-base;
+
+  &:hover {
+    color: rgba($white, 0.7);
   }
 }
