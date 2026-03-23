@@ -1,0 +1,359 @@
+@import '@/styles/variables';
+
+.page {
+  background-color: $primary-black;
+  min-height: 100vh;
+}
+
+// ─── Hero ────────────────────────────────────────────────────────────────────
+.hero {
+  position: relative;
+  height: 520px;
+  overflow: hidden;
+
+  @media (max-width: $breakpoint-lg) {
+    height: 420px;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    height: 320px;
+  }
+}
+
+.heroImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to right,
+    rgba($primary-black, 0.90) 0%,
+    rgba($primary-black, 0.65) 50%,
+    rgba($primary-black, 0.30) 100%
+  );
+
+  @media (max-width: $breakpoint-md) {
+    background: linear-gradient(
+      to top,
+      rgba($primary-black, 0.95) 0%,
+      rgba($primary-black, 0.6) 60%,
+      rgba($primary-black, 0.2) 100%
+    );
+  }
+}
+
+.heroContent {
+  position: relative;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-bottom: $spacing-2xl;
+  gap: $spacing-sm;
+}
+
+.breadcrumb {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  color: rgba($white, 0.6);
+  font-size: $font-size-sm;
+  text-decoration: none;
+  transition: $transition-base;
+  margin-bottom: $spacing-xs;
+
+  &:hover {
+    color: $primary-orange;
+  }
+}
+
+.heroTitle {
+  font-size: $font-size-4xl;
+  font-weight: $font-weight-bold;
+  color: $white;
+  line-height: 1.1;
+  max-width: 600px;
+  margin: 0;
+
+  @media (max-width: $breakpoint-lg) {
+    font-size: $font-size-3xl;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    font-size: $font-size-2xl;
+  }
+}
+
+.heroPrice {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $primary-orange;
+  margin: 0;
+}
+
+.heroBtn {
+  align-self: flex-start;
+  margin-top: $spacing-xs;
+}
+
+// ─── Details ─────────────────────────────────────────────────────────────────
+.details {
+  padding: $spacing-3xl 0;
+  border-bottom: 1px solid $border-color;
+
+  @media (max-width: $breakpoint-md) {
+    padding: $spacing-2xl 0;
+  }
+}
+
+.detailsInner {
+  display: grid;
+  grid-template-columns: 1fr 360px;
+  gap: $spacing-3xl;
+  align-items: start;
+
+  @media (max-width: $breakpoint-lg) {
+    grid-template-columns: 1fr 300px;
+    gap: $spacing-2xl;
+  }
+
+  @media (max-width: $breakpoint-md) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.detailsHeading {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $white;
+  margin-bottom: $spacing-md;
+}
+
+.detailsDescription {
+  font-size: $font-size-base;
+  color: rgba($white, 0.75);
+  line-height: 1.8;
+  margin-bottom: $spacing-lg;
+}
+
+.featuresHeading {
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $white;
+  margin-bottom: $spacing-md;
+}
+
+.featuresList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.featuresItem {
+  display: flex;
+  align-items: flex-start;
+  gap: $spacing-sm;
+  font-size: $font-size-base;
+  color: rgba($white, 0.85);
+  line-height: 1.6;
+}
+
+.featuresIcon {
+  color: $primary-orange;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+// ─── Price card ───────────────────────────────────────────────────────────────
+.priceCard {
+  background-color: $secondary-black;
+  border: 1px solid $border-color;
+  border-radius: $border-radius-lg;
+  padding: $spacing-lg;
+  position: sticky;
+  top: calc($spacing-3xl + $spacing-md); // below fixed nav
+
+  @media (max-width: $breakpoint-md) {
+    position: static;
+  }
+}
+
+.priceCardLabel {
+  font-size: $font-size-sm;
+  color: rgba($white, 0.5);
+  margin-bottom: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.priceCardPrice {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $primary-orange;
+  margin-bottom: $spacing-sm;
+}
+
+.priceCardNote {
+  font-size: $font-size-sm;
+  color: rgba($white, 0.55);
+  line-height: 1.6;
+  margin-bottom: $spacing-lg;
+  border-top: 1px solid $border-color;
+  padding-top: $spacing-sm;
+}
+
+.priceCardActions {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+}
+
+.priceCardBtn {
+  width: 100%;
+  justify-content: center;
+}
+
+// ─── Gallery ─────────────────────────────────────────────────────────────────
+.gallery {
+  padding: $spacing-3xl 0;
+  overflow: hidden;
+}
+
+.galleryHeading {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $white;
+  margin-bottom: 4px;
+}
+
+.galleryHint {
+  font-size: $font-size-sm;
+  color: rgba($white, 0.4);
+  margin-bottom: $spacing-md;
+}
+
+.galleryStrip {
+  display: flex;
+  gap: $spacing-md;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  cursor: grab;
+  user-select: none;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding-bottom: 4px;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.galleryStripDragging {
+  cursor: grabbing;
+}
+
+.galleryPadding {
+  // matches container padding (40px on desktop, 16px on mobile)
+  flex-shrink: 0;
+  width: $container-padding-desktop;
+
+  @media (max-width: $breakpoint-md) {
+    width: $container-padding-mobile;
+  }
+}
+
+.galleryItem {
+  flex-shrink: 0;
+  width: 420px;
+  height: 300px;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  scroll-snap-align: start;
+  background-color: $secondary-black;
+
+  @media (max-width: $breakpoint-md) {
+    width: 280px;
+    height: 200px;
+  }
+}
+
+.galleryImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  pointer-events: none;
+  transition: transform 0.4s ease;
+
+  .galleryItem:hover & {
+    transform: scale(1.04);
+  }
+}
+
+// ─── Related ─────────────────────────────────────────────────────────────────
+.related {
+  padding: $spacing-3xl 0;
+  border-top: 1px solid $border-color;
+}
+
+.relatedHeading {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $white;
+  margin-bottom: $spacing-md;
+}
+
+.relatedGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-md;
+
+  @media (max-width: $breakpoint-lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $breakpoint-sm) {
+    grid-template-columns: 1fr;
+  }
+}
+
+// ─── CTA Banner ──────────────────────────────────────────────────────────────
+.ctaBanner {
+  background-color: $primary-orange;
+  padding: $spacing-3xl 0;
+}
+
+.ctaContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: $spacing-sm;
+}
+
+.ctaTitle {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $primary-black;
+  margin: 0;
+
+  @media (max-width: $breakpoint-md) {
+    font-size: $font-size-xl;
+  }
+}
+
+.ctaText {
+  font-size: $font-size-base;
+  color: rgba($primary-black, 0.75);
+  margin: 0 0 $spacing-sm;
+}

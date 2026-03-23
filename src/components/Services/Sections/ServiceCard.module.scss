@@ -1,0 +1,151 @@
+@import '@/styles/variables';
+
+$carousel-breakpoint: $breakpoint-md;
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: $secondary-black;
+  border-radius: $border-radius-lg;
+  overflow: hidden;
+  transition: $transition-slow;
+  height: 100%;
+
+  &:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.4);
+
+    .image {
+      transform: scale(1.05);
+    }
+  }
+
+  // No lift on mobile (carousel swipe context)
+  @media (max-width: $carousel-breakpoint) {
+    &:hover {
+      transform: none;
+      box-shadow: none;
+    }
+  }
+}
+
+.imageWrapper {
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  width: 100%;
+  background-color: $thirdary-black;
+
+  @media (max-width: $carousel-breakpoint) {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.comingSoonBadge {
+  position: absolute;
+  top: $spacing-sm;
+  left: $spacing-sm;
+  background-color: $secondary-black;
+  color: $white;
+  font-size: $font-size-xs;
+  font-weight: $font-weight-semibold;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  padding: 4px 10px;
+  border-radius: $border-radius-full;
+  border: 1px solid $border-color;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: $spacing-md;
+  gap: $spacing-xs;
+}
+
+.title {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $white;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.description {
+  font-size: $font-size-sm;
+  color: rgba($white, 0.7);
+  line-height: 1.6;
+  margin: 0;
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+// ─── Footer: price + actions in one row on mobile ────────────────────────────
+.footer {
+  display: flex;
+  flex-direction: column;
+  gap: $spacing-sm;
+  margin-top: auto;
+  padding-top: $spacing-xs;
+
+  @media (max-width: $carousel-breakpoint) {
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    gap: $spacing-sm;
+  }
+}
+
+.price {
+  font-size: $font-size-sm;
+  font-weight: $font-weight-semibold;
+  color: $primary-orange;
+  white-space: nowrap;
+}
+
+.actions {
+  display: flex;
+  align-items: center;
+  gap: $spacing-sm;
+  flex-wrap: wrap;
+}
+
+.detailsLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: $font-size-sm;
+  font-weight: $font-weight-medium;
+  color: rgba($white, 0.6);
+  text-decoration: none;
+  transition: $transition-base;
+  padding: 4px 0;
+
+  &:hover {
+    color: $primary-orange;
+  }
+
+  // Hide on mobile — card is in carousel, tap "Get a Quote" is the CTA
+  @media (max-width: $carousel-breakpoint) {
+    display: none;
+  }
+}
+
+.disabledButton {
+  opacity: 0.5;
+  cursor: not-allowed;
+  border-color: $border-color !important;
+  color: rgba($white, 0.5) !important;
+  background: transparent !important;
+}

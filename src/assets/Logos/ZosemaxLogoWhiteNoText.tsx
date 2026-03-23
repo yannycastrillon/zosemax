@@ -6,7 +6,7 @@ interface ZosemaxLogoWhiteNoTextProps {
 
 const ZosemaxLogoWhiteNoText: FC<ZosemaxLogoWhiteNoTextProps> = ({ className }) => {
   return (
-    <svg width="61" height="39" viewBox="0 0 61 39" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <svg className={className} width="61" height="39" viewBox="0 0 61 39" fill="none" xmlns="http://www.w3.org/2000/svg">
       <rect width="60.4839" height="6.54511" fill="white"/>
       <rect x="3.83154" y="7.63597" width="52.8208" height="5.72698" fill="white"/>
       <rect x="7.3894" y="14.4538" width="7.66312" height="23.726" fill="white"/>

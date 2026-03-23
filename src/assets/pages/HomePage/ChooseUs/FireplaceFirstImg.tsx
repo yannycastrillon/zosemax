@@ -7,7 +7,7 @@ interface FireplaceFirstImgProps {
 
 const FireplaceFirstImg: FC<FireplaceFirstImgProps> = ({ className, alt }) => {
   return (
-    <svg width="350" height="197" viewBox="0 0 350 197" fill="none" xmlns="http://www.w3.org/2000/svg" xlinkHref="http://www.w3.org/1999/xlink" className={className}>
+    <svg width="350" height="197" viewBox="0 0 350 197" fill="none" xmlns="http://www.w3.org/2000/svg" xlinkHref="http://www.w3.org/1999/xlink" role="img" aria-label={alt} className={className}>
       <rect width="349.287" height="197" rx="10" fill="url(#pattern0_11_214)" />
       <defs>
         <pattern id="pattern0_11_214" patternContentUnits="objectBoundingBox" width="1" height="1">

@@ -1,0 +1,105 @@
+@import '@/styles/variables';
+
+// Breakpoint where carousel kicks in
+$carousel-breakpoint: $breakpoint-md;
+
+.section {
+  margin-bottom: $spacing-3xl;
+
+  @media (max-width: $carousel-breakpoint) {
+    margin-bottom: $spacing-2xl;
+  }
+}
+
+.title {
+  font-size: $font-size-2xl;
+  font-weight: $font-weight-bold;
+  color: $white;
+  margin-bottom: $spacing-md;
+  line-height: 1.2;
+
+  @media (max-width: $carousel-breakpoint) {
+    font-size: $font-size-xl;
+    margin-bottom: $spacing-sm;
+    // Keep it inside the container padding
+    padding: 0;
+  }
+}
+
+// ─── Desktop grid ─────────────────────────────────────────────────────────────
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: $spacing-md;
+
+  @media (max-width: $breakpoint-lg) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: $carousel-breakpoint) {
+    display: none;
+  }
+}
+
+// ─── Mobile carousel ─────────────────────────────────────────────────────────
+.carousel {
+  display: none;
+
+  @media (max-width: $carousel-breakpoint) {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    // Break out of container to span full viewport width
+    margin-left: -$container-padding-mobile;
+    width: calc(100% + #{$container-padding-mobile * 2});
+
+    &::-webkit-scrollbar {
+      display: none;
+    }
+  }
+}
+
+.carouselItem {
+  // Each slide = full carousel width (= full viewport)
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  // Re-apply container padding so card sits correctly
+  padding: 0 $container-padding-mobile;
+  box-sizing: border-box;
+}
+
+// ─── Pagination dots ──────────────────────────────────────────────────────────
+.dots {
+  display: none;
+
+  @media (max-width: $carousel-breakpoint) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 6px;
+    margin-top: $spacing-sm;
+    padding: 4px 0;
+  }
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  background-color: rgba($primary-orange, 0.3);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+
+  &:hover {
+    background-color: rgba($primary-orange, 0.6);
+  }
+}
+
+.dotActive {
+  background-color: $primary-orange;
+  transform: scale(1.25);
+}
