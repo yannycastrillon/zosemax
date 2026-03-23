@@ -25,3 +25,7 @@ dist-ssr
 
 # Environment variables
 .env
+
+# Claude Code — commit agents & skills, ignore local config
+.claude/settings.local.json
+.claude/agent-memory/
